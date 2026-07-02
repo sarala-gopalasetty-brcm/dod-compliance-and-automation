@@ -62,14 +62,14 @@ control 'PHTN-50-000082' do
     its('group') { should cmp 'root' }
     it { should_not be_more_permissive_than('0755') }
   end
-  describe file('/usr/sbin/autrace') do
-    its('owner') { should cmp 'root' }
-    its('group') { should cmp 'root' }
-    it { should_not be_more_permissive_than('0755') }
-  end
   describe file('/usr/sbin/augenrules') do
     its('owner') { should cmp 'root' }
     its('group') { should cmp 'root' }
     it { should_not be_more_permissive_than('0750') }
+  end
+  describe file('/usr/sbin/autrace') do
+    its('owner') { should cmp 'root' }
+    its('group') { should cmp 'root' }
+    it { should_not be_more_permissive_than('0755') }
   end
 end
